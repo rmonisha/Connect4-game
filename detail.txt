@@ -1,0 +1,24 @@
+from tkinter import *
+from tkinter import ttk
+import os
+
+row_number = 0
+
+def start_game():
+    os.system('python connect4_game.py')
+
+def leave_game():
+    return root.destroy()
+
+root = Tk()
+root.title('Connect4')
+root.geometry("800x500")
+root['background']='#856ff8'
+
+label = Label( root, text ='Ready to play ?',bg ='#B0DCF6',relief = RAISED,height = 2,width = 62,font='Times 20').grid(row = row_number)
+row_number+=1
+button1 = Button (root,text='START', command = start_game,bg ='#B0DCF6',activebackground='#ff66ff' ,height = 2,width = 62,font= 'Times 20').grid(row= row_number)
+row_number+=1
+button2 = Button (root,text = 'QUIT',command = leave_game,bg ='#B0DCF6',activebackground='#ff66ff' ,height = 2,width = 62,font= 'Times 20').grid(row=row_number)
+
+root.mainloop()
